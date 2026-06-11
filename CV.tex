@@ -4,6 +4,8 @@
 \setlength{\parindent}{0pt}
 \usepackage{xltxtra}
 \usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{enumitem}
 \hypersetup{hidelinks}
 \usepackage{url}
 \urlstyle{tt}
@@ -90,7 +92,7 @@
 
 %%%% 利用tikz来定位照片
 \begin{tikzpicture}[remember picture, overlay] 
-    \node[anchor = north east] at ($(current page.north east)+(-2cm,-1.2cm)$) {\includegraphics[height=3cm]{avatar.jpg}};
+    \node[anchor = north east] at ($(current page.north east)+(-2cm,-1.2cm)$) {\includegraphics[height=3cm]{photo.jpg}};
   \end{tikzpicture}%
   %%%% 利用tikz来定位学校Logo，这里只在第一页显示
   \begin{tikzpicture}[remember picture, overlay] 
@@ -98,58 +100,111 @@
   \end{tikzpicture}%
 \centerline{\LARGE\bfseries{夏雨}} 
 
-\centerline{\normalsize{\faPhone\ 111-1111-1111 \quad \faEnvelopeO\ \href{mailto:3230100000@zju.edu.cn}{3230100000@zju.edu.cn}}} 
+\begin{center}
+\normalsize
+\begin{tabular}{l @{\hspace{1cm}} l}  % 这里的 1cm 是两列之间的固定绝对间距
+    \faPhone\ 158-6729-7122 & \faEnvelopeO\ \href{mailto:xy1@zju.edu.cn}{xy1@zju.edu.cn} \\
+    \faHome\ 浙江·宁波 & \faCalendar\ 2001.10 \\
+\end{tabular}
+\end{center}
 
-\centerline{\normalsize{\faGithubSquare\ \href{https://github.com/maksymilan}{https://github.com/maksymilan} \quad \faRssSquare\ \href{https://maksymilan.github.io/}{https://maksymilan.github.io}}} 
-    
+
 \section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ 教育背景}    
-\textbf{浙江大学} \hfill 2023.9 -- 至今\\[0.5em] % 标题和正文间加一点距离
-CC98烂坑挖掘工程与技术\quad 大二 
-\begin{itemize}[nosep]
-    \item 相关课程：《烂坑挖掘及基础》、《高级挖坑技巧》、《烂坑数理统计》
+
+%%% ------------ 第一段经历：浙江大学 ------------ %%%
+\noindent
+\begin{tabularx}{\textwidth}{@{} X @{\hspace{1em}} c @{\hspace{1em}} X @{}}
+    \textbf{2024.09 - 至今} & \textbf{浙江大学 | 材料科学与工程/材料与化工(A)} & \hfill \textbf{硕士在读}
+\end{tabularx}
+\vspace{-2em} % 1. 这里改为负间距，强行把下方的列表往上拉
+
+% 2. 增加 topsep=0pt 彻底清除 itemize 自带的顶部外边距
+\begin{itemize}[nosep, topsep=0pt, leftmargin=1.5em]
+    \item 主修课程：能源材料及电池技术、材料湿化学合成与制备、半导体物理。
+    \item 荣誉奖项：浙江大学材料学院优秀团干
 \end{itemize}
+
+\vspace{0em} % 两段教育经历之间的间距
+
+%%% ------------ 第二段经历：四川大学 ------------ %%%
+\noindent
+\begin{tabularx}{\textwidth}{@{} X @{\hspace{1em}} c @{\hspace{1em}} X @{}}
+    \textbf{2020.09 - 2024.06} & \textbf{四川大学 | 新能源材料与器件(A+)} & \hfill \textbf{学士}
+\end{tabularx}
+\vspace{-2em}
+\begin{itemize}[nosep,topsep=0pt, leftmargin=1.5em]
+    \item 主修课程：电工技术基础、电子技术基础、半导体物理、薄膜物理与技术、材料分析技术。
+    \item 荣誉奖项：四川大学单项二等奖学金（连续三年）
+\end{itemize}
+
+\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 发表论文}
+
+% ================== 论文/文献条目 ==================
+\noindent 
+\textbf{《Mechanically Stable Honeycomb‐Like Gel Polymer Electrolyte Enabling Fast Li+Transport for High‐Performance Lithium Metal Batteries》}\hfill\textbf{Advanced Functional Materials} \\ [-0.3em] 
+{\small \textbf{Author}：Hongwei Pan; Zhenyu Zhou; Yifei Li; Xueliang Zhang; \underline{Yu Xia}; Wei Guo; Sijie Xie; Pingping Tan; Xuan Zhang*; Jan Fransaer*}
+% ==================================================
+
+\vspace{0.2em} % 如果有多篇文献，用这个控制文献条目之间的间距
+
+% ================== 论文/文献条目 ==================
+\noindent 
+\textbf{《Nitro functionalization and nanoscale confinement enable ether-based quasi-solid electrolytes with stable lithium metal and high-voltage compatibility》}\hfill\textbf{Nanoscale} \\ [-0.3em] 
+{\small \textbf{Author}：Huiling Liu；Xingkai Jia； \underline{Yu Xia}； Zhu Liu*； Yinzhu Jiang*； Xuan Zhang*}
+% ==================================================
+
+\vspace{0.2em} % 如果有多篇文献，用这个控制文献条目之间的间距
+
+% ================== 论文/文献条目 ==================
+\noindent 
+\textbf{《Tuning the Ion Transfer Behavior to Approaching Near‐Unity Li+ Transference via Pore Engineering》}\hfill\textbf{Small} \\ [-0.3em] 
+{\small \textbf{Author}：Xingkai Jia; Hongwei Pan; \underline{Yu Xia}; Pu Cheng; Shixiang Liu; Huiling Liu; Lingling Cao; Yinzhu Jiang*; Xuan Zhang*}
+% ==================================================
+% 使用 \projectsep 命令来分隔两个项目
+\projectsep
 
 \section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 项目经历}
 
 % --- 第一个项目 ---
 % 将标题行末尾的 \\ 替换为 \titlebreak 命令
-\textbf{98烂坑风控与可视化作战平台} \hfill 2024.08 -- 至今 \titlebreak
-项目描述：为维护cc98社区的讨论纯度、净化“心灵之约”版块风气，本项目旨在对“烂坑”进行科学、严谨的量化分析，并引入\textbf{大语言模型(LLM)}对烂坑帖进行\textbf{自动化情感极性与“离谱指数”标注}。
-% 在 itemize 的选项中，使用 topsep=\intraProjectListTopSep 来控制上边距
-\begin{itemize}[nosep, topsep=\intraProjectListTopSep]
-    \item \textbf{数据与后端}：运用 \textbf{Go} 语言及 \textbf{GORM} 框架，实现对全站“烂坑”帖的7x24小时全天候\textbf{抓取}与\textbf{入库}(MySQL)。
-    \item \textbf{可视化前端}：采用原生 \textbf{HTML/CSS/JS} 构建了“烂坑”实时监控\textbf{作战大屏}。实现了坑主成分分析、挖坑热力图、年度烂坑王榜单等\textbf{可视化图表}，并通过 \textbf{AJAX} 异步刷新，确保数据洞察的实时性。
-    \item \textbf{核心产出}：全面掌握了从\textbf{数据采集、清洗、LLM标注到可视化分析}的“反烂坑”全链路技术。
+\noindent
+\begin{tabularx}{\textwidth}{@{} X @{\hspace{1em}} c @{\hspace{1em}} X @{}}
+    \textbf{2024.11 - 2025.05} & \textbf{卤化物固态电解质界面耦合实现高能量密度氯化铁正极(国家重点研发)} & \hfill {参与人}
+\end{tabularx}
+\vspace{-2em} % 1. 这里改为负间距，强行把下方的列表往上拉
+
+% 2. 增加 topsep=0pt 彻底清除 itemize 自带的顶部外边距
+\begin{itemize}[nosep, topsep=0pt, leftmargin=1.5em]
+    \item {\small \textbf{了解卤化物固态电解质材料特性及其与电极界面的耦合机制，}能够通过键合调控促进可逆相变与氧化还原反应}
+    \item {\small \textbf{熟悉高容量正极材料(如氟化铁)的失效机制与稳定策略，}具备界面化学修饰与CEI/SEI设计能力}
+    \item {\small \textbf{精通电化学性能优化与衰减机制分析，}能系统评估循环稳定性、能量效率及其实际应用潜力}
 \end{itemize}
+
+\vspace{0em} 
 
 % 使用 \projectsep 命令来分隔两个项目
 \projectsep
 
 % --- 第二个项目 ---
-\textbf{AIGC驱动的超进化自动挖坑机 (Agent)} \hfill 2025.02 -- 至今 \titlebreak
-项目描述：为探索心灵版规的边界，以及测试版主锁沉反应速度的极限，本项目基于\textbf{多智能体协作(MCP)与LLM}技术，开发了一款能\textbf{自主“挖坑”与“互坑”}的AI Agent。
-\begin{itemize}[nosep, topsep=\intraProjectListTopSep]
-    \item \textbf{并发与调度}：后端采用 \textbf{Go} 语言，充分利用 \textbf{Goroutine} 和 \textbf{Channel} 的高并发模型，模拟\textbf{用户并发在线}，执行定时挖坑，确保挖坑行动的\textbf{隐蔽性}与\textbf{高效性}。
-    \item \textbf{实时监控与响应}：运用 \textbf{WebSocket} 协议实现了对目标帖子的\textbf{实时监听与交互}。确保在烂坑被识破的第一时间，Agent能光速完成\textbf{“lktp”}或\textbf{反向钓鱼}操作，展现出极高的AI博弈能力。
-    \item \textbf{可视化GUI}：前端使用 \textbf{React} 框架构建了\textbf{后台管理的可视化面板 (Admin Panel)}。可一键下达挖坑指令、动态调整Agent的\textbf{指令}、并实时监控数据。
+\noindent
+\begin{tabularx}{\textwidth}{@{} l @{\hspace{1.5em}} X @{\hspace{1.5em}} r @{}}
+    \textbf{2025.06 - 2026.04} & \textbf{正负极兼容多功能不燃电解液及耐高温高电压隔膜设计开发(国家重点研发)} & \hfill {参与人}
+\end{tabularx}
+\vspace{-2em} % 1. 这里改为负间距，强行把下方的列表往上拉
+
+% 2. 增加 topsep=0pt 彻底清除 itemize 自带的顶部外边距
+\begin{itemize}[nosep, topsep=0pt, leftmargin=1.5em]
+    \item {\small \textbf{了解全电池安全性能评估标准与极端工况下衰减机制，}能够系统评估电池的不燃特性与高温高压热稳定性}
+    \item {\small \textbf{熟悉高电压隔膜表面涂覆改性工艺与热失控阻隔方法，}具备多元复合隔膜构建与性能评测能力}
+    \item {\small \textbf{精通多功能添加剂筛选与材料合成路径，}能通过功能基团设计匹配实际需求}
 \end{itemize}
 
-\section{\makebox[\widthof{\faCogs}][c]{\color{CVBlue}\faCogs}\ 技术栈}
+
+\section{\makebox[\widthof{\faCogs}][c]{\color{CVBlue}\faCogs}\ 专业技能}
 \begin{itemize}[nosep]
-    \item \textbf{编程语言：} \textbf{Go}, Python, C++
-    \item \textbf{开发工具：} SSH, Git, Vim, MakeFile,LaTex
-    \item \textbf{操作系统：} Linux
-\end{itemize}
-\section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faList}\ 获奖情况}
-\begin{itemize}
-    \item CC98年度用户 \hfill 2023.12
-    
-\end{itemize}
-    
-\section{\makebox[\widthof{\faInfo}][c]{\color{CVBlue}\faInfo}\ 其他}
-\begin{itemize}[parsep=0.5ex]
-    \item \textbf{技术博客：} \href{https://maksymilan.github.io/}{https://maksymilan.github.io/}
-    \item \textbf{GitHub：} \href{https://github.com/maksymilan}{https://github.com/maksymilan} 
-    \item \textbf{英语水平：} CET-4, CET-6
+    \item \textbf{软件技能：} 熟练掌握Origin数据绘图、Office办公、PS图像处理等
+    \item \textbf{实验技能：} 熟练掌握电极材料与电解质的制备、扣式电池与软包电池的组装等
+    \item \textbf{测试技能：} 熟练掌握电化学性能测试、XRD测试、SEM测试、Raman测试、FT-IR测试等
+    \item \textbf{其他技能：} 英语CET-6
 \end{itemize}
 \end{document}
